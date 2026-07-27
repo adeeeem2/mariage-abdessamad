@@ -1,83 +1,465 @@
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف - عبد الصمد عيادي</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<title>دعوة زفاف — عبد الصمد عيادي</title>
+<meta name="description" content="دعوة حضور حفل زفاف عبد الصمد عيادي، يوم 3 سبتمبر 2026، قاعة الحفلات طورشي، فرجيوة - ميلة">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
-body{margin:0;background:#fffdf8;color:#5a4a3a;font-family:Amiri,serif}
-.overlay{position:fixed;inset:0;background:#fffdf8;display:flex;align-items:center;justify-content:center;z-index:99}
-.card{border:1px solid #d9c1a0;padding:40px;border-radius:20px;text-align:center;background:white;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.btn{background:#c8a97e;color:white;border:none;padding:12px 25px;border-radius:30px;font-size:18px}
-.hidden{display:none}
-.container{max-width:950px;margin:auto;padding:30px}
-.title{text-align:center;color:#c8a97e;letter-spacing:3px}
-.name{font-family:'Great Vibes',cursive;font-size:80px;text-align:center;color:#c8a97e}
-.date{text-align:center;font-size:28px}
-.section{background:white;border:1px solid #eadbc8;border-radius:20px;padding:25px;margin:20px 0}
-.fr{direction:ltr;text-align:center;font-family:'Cormorant Garamond',serif;font-size:24px}
-.ar{text-align:center;font-size:30px;line-height:2}
-.count{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.circle{width:110px;height:110px;border:2px solid #c8a97e;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.num{font-size:30px;font-weight:bold}
-a.map{display:inline-block;background:#c8a97e;color:white;padding:12px 20px;border-radius:30px;text-decoration:none}
+  :root{
+    --ink: #0e2f24;
+    --ink-deep: #081d16;
+    --ivory: #fbf6ea;
+    --ivory-soft: #f2e9d5;
+    --gold: #c9a24b;
+    --gold-light: #ecd497;
+    --gold-dim: #8a723a;
+    --burgundy: #7a2331;
+    --text-dark: #26221a;
+    --text-soft: #6b5f4a;
+    --ring: 1px solid rgba(201,162,75,0.55);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(201,162,75,0.10), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(201,162,75,0.08), transparent 45%),
+      linear-gradient(160deg, var(--ink) 0%, var(--ink-deep) 100%);
+    font-family: 'Tajawal', sans-serif;
+    color: var(--text-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 28px 14px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* faint tessellated arabesque backdrop */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    opacity:0.15;
+    pointer-events:none;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(201,162,75,0.10) 0, rgba(201,162,75,0.10) 1px, transparent 1px, transparent 42px),
+      repeating-linear-gradient(-45deg, rgba(201,162,75,0.10) 0, rgba(201,162,75,0.10) 1px, transparent 1px, transparent 42px);
+  }
+
+  .stars{
+    position:fixed; inset:0; pointer-events:none; overflow:hidden;
+  }
+  .stars span{
+    position:absolute;
+    width:2px; height:2px;
+    background: var(--gold-light);
+    border-radius:50%;
+    opacity:0.35;
+    animation: twinkle 4.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{ 0%,100%{opacity:.12;} 50%{opacity:.55;} }
+
+  .card{
+    position:relative;
+    width:100%;
+    max-width: 620px;
+    background: var(--ivory);
+    border-radius: 6px;
+    padding: 56px 40px 46px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,162,75,0.15);
+    opacity:0;
+    transform: translateY(18px);
+    animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards .15s;
+  }
+  @keyframes rise{ to{ opacity:1; transform:translateY(0);} }
+
+  .frame{
+    position:absolute;
+    inset: 14px;
+    border: var(--ring);
+    pointer-events:none;
+  }
+  .frame::after{
+    content:"";
+    position:absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,162,75,0.30);
+  }
+
+  .corner{
+    position:absolute;
+    width:56px; height:56px;
+    pointer-events:none;
+  }
+  .corner svg{ width:100%; height:100%; }
+  .corner.tl{ top:6px; left:6px; }
+  .corner.tr{ top:6px; right:6px; transform: scaleX(-1); }
+  .corner.bl{ bottom:6px; left:6px; transform: scaleY(-1); }
+  .corner.br{ bottom:6px; right:6px; transform: scale(-1,-1); }
+
+  .content{ position:relative; text-align:center; }
+
+  .bismillah{
+    font-family:'Tajawal', sans-serif;
+    font-weight:500;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    color: var(--gold-dim);
+    margin: 0 0 22px;
+  }
+
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-bottom: 18px;
+  }
+  .eyebrow .line{ height:1px; width:34px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .eyebrow .line.rev{ background: linear-gradient(270deg, transparent, var(--gold)); }
+  .eyebrow span.txt{
+    font-size:0.78rem;
+    letter-spacing:0.28em;
+    color: var(--gold-dim);
+    font-weight:700;
+  }
+
+  .family-line{
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    max-width: 380px;
+    margin: 0 auto 14px;
+    line-height: 1.9;
+  }
+
+  .names{
+    font-family:'Aref Ruqaa', serif;
+    font-weight:700;
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    color: var(--burgundy);
+    line-height:1.25;
+    margin: 6px 0 4px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  .subname{
+    font-family:'Aref Ruqaa', serif;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    color: var(--gold-dim);
+    margin: 0 0 26px;
+  }
+
+  .invite-text{
+    font-size: 1.02rem;
+    line-height:2.05;
+    color: var(--text-soft);
+    max-width: 440px;
+    margin: 0 auto 30px;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin: 8px auto 30px;
+  }
+  .divider .dash{ height:1px; width:70px; background:var(--gold); opacity:.6; }
+  .divider .dot{ width:6px; height:6px; background:var(--burgundy); transform:rotate(45deg); }
+
+  .details{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+  .detail-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size: 1.02rem;
+    color: var(--text-dark);
+  }
+  .detail-row .icon{ width:18px; height:18px; flex:0 0 auto; color: var(--gold-dim); }
+  .detail-row strong{ font-weight:700; }
+  .detail-sub{
+    font-size:0.9rem;
+    color: var(--text-soft);
+    margin-top:-6px;
+  }
+
+  .opening-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(201,162,75,0.4);
+  }
+  .opening-sep{
+    width:1px;
+    height: 16px;
+    background: var(--gold);
+    opacity:.55;
+  }
+  .opening-ar{
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--burgundy);
+  }
+  .opening-fr{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-soft);
+    letter-spacing: 0.01em;
+  }
+  @media (max-width: 380px){
+    .opening-row{ flex-direction:column; gap:6px; }
+    .opening-sep{ display:none; }
+  }
+
+  /* Countdown - eight-pointed star cells (signature element) */
+  .countdown-label{
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    color: var(--gold-dim);
+    font-weight:700;
+    margin-bottom:18px;
+  }
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap: 14px;
+    flex-wrap:wrap;
+    margin-bottom: 8px;
+  }
+  .cell{
+    position:relative;
+    width: 78px;
+    height: 78px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .cell .star{
+    position:absolute;
+    inset:0;
+    clip-path: polygon(50% 0%, 65% 15%, 85% 15%, 85% 35%, 100% 50%, 85% 65%, 85% 85%, 65% 85%, 50% 100%, 35% 85%, 15% 85%, 15% 65%, 0% 50%, 15% 35%, 15% 15%, 35% 15%);
+    background: linear-gradient(150deg, var(--ivory-soft), var(--ivory));
+    box-shadow: inset 0 0 0 1.5px var(--gold);
+  }
+  .cell .num{
+    position:relative;
+    font-family:'Tajawal', sans-serif;
+    font-weight:800;
+    font-size: 1.55rem;
+    color: var(--burgundy);
+    font-variant-numeric: tabular-nums;
+  }
+  .cell .unit{
+    position:absolute;
+    bottom: -22px;
+    left:0; right:0;
+    text-align:center;
+    font-size: 0.72rem;
+    letter-spacing:0.08em;
+    color: var(--text-soft);
+  }
+  .countdown-wrap{ margin-bottom: 46px; }
+
+  .celebrate{
+    display:none;
+    font-family:'Aref Ruqaa', serif;
+    font-size: 1.6rem;
+    color: var(--burgundy);
+    margin-bottom: 46px;
+  }
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--ink-deep);
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.95rem;
+    padding: 13px 28px;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px rgba(201,162,75,0.35);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .cta:hover{ transform: translateY(-2px); box-shadow: 0 14px 30px rgba(201,162,75,0.45); }
+  .cta:focus-visible{ outline: 2px solid var(--burgundy); outline-offset:3px; }
+  .cta svg{ width:17px; height:17px; }
+
+  .footer-note{
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height:1.9;
+  }
+  .footer-note .heart{ color: var(--burgundy); }
+
+  @media (max-width: 420px){
+    .card{ padding: 44px 20px 38px; }
+    .cell{ width: 64px; height:64px; }
+    .cell .num{ font-size:1.25rem; }
+    .countdown{ gap:8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
 </style>
 </head>
 <body>
 
-<div class="overlay" id="welcome">
-<div class="card">
-<h2>دعوة زفاف</h2>
-<h3>عبد الصمد عيادي</h3>
-<p>يسرنا دعوتكم لمشاركتنا هذه المناسبة السعيدة</p>
-<button class="btn" onclick="openInvitation()">فتح الدعوة ✨</button>
-</div>
-</div>
+<div class="stars" id="stars" aria-hidden="true"></div>
 
-<div class="container">
-<div class="title">INVITATION AU MARIAGE</div>
-<div class="name">Abdessamad Ayadi</div>
-<div class="date">03 • 09 • 2026</div>
+<main class="card">
+  <div class="frame" aria-hidden="true"></div>
 
-<div class="section ar">
-بكل معاني المحبة والتقدير، تتشرف عائلة عيادي عبد الجليل بدعوتكم لمشاركتها فرحة زفاف ابنها عبد الصمد، فحضوركم يزيد هذه المناسبة بهجةً وسرورًا، ويمنحها أجمل معاني المودة والوفاء.
-</div>
+  <div class="corner tl" aria-hidden="true">
+    <svg viewBox="0 0 56 56" fill="none"><path d="M2 54V14C2 7 7 2 14 2H54" stroke="#c9a24b" stroke-width="1.2"/><circle cx="14" cy="2" r="2.4" fill="#c9a24b"/><path d="M2 40C10 40 16 34 16 26" stroke="#c9a24b" stroke-width="1" opacity=".6"/></svg>
+  </div>
+  <div class="corner tr" aria-hidden="true">
+    <svg viewBox="0 0 56 56" fill="none"><path d="M2 54V14C2 7 7 2 14 2H54" stroke="#c9a24b" stroke-width="1.2"/><circle cx="14" cy="2" r="2.4" fill="#c9a24b"/><path d="M2 40C10 40 16 34 16 26" stroke="#c9a24b" stroke-width="1" opacity=".6"/></svg>
+  </div>
+  <div class="corner bl" aria-hidden="true">
+    <svg viewBox="0 0 56 56" fill="none"><path d="M2 54V14C2 7 7 2 14 2H54" stroke="#c9a24b" stroke-width="1.2"/><circle cx="14" cy="2" r="2.4" fill="#c9a24b"/><path d="M2 40C10 40 16 34 16 26" stroke="#c9a24b" stroke-width="1" opacity=".6"/></svg>
+  </div>
+  <div class="corner br" aria-hidden="true">
+    <svg viewBox="0 0 56 56" fill="none"><path d="M2 54V14C2 7 7 2 14 2H54" stroke="#c9a24b" stroke-width="1.2"/><circle cx="14" cy="2" r="2.4" fill="#c9a24b"/><path d="M2 40C10 40 16 34 16 26" stroke="#c9a24b" stroke-width="1" opacity=".6"/></svg>
+  </div>
 
-<div class="section fr">
-Avec tout notre respect et notre affection, la famille Ayadi Abdeljalil a l'honneur de vous inviter à partager la joie du mariage de son fils Abdessamad.
-</div>
+  <div class="content">
+    <p class="bismillah">بسم الله الرحمن الرحيم</p>
 
-<div class="section ar">
-📅 الخميس 03 سبتمبر 2026<br><br>
-🕓 فتح القاعة : 16:00<br><br>
-📍 قاعة الحفلات طورشي – فرجيوة، ميلة<br><br>
-<a class="map" href="https://maps.app.goo.gl/yVCtMybXV2EeparS7" target="_blank">موقع القاعة</a>
-</div>
+    <div class="eyebrow">
+      <span class="line"></span>
+      <span class="txt">دعوة حضور حفل زفاف</span>
+      <span class="line rev"></span>
+    </div>
 
-<div class="ar" style="color:#c8a97e">يقترب موعد هذا اليوم المميز...</div>
-<br>
+    <p class="family-line">تتشرف عائلة عيادي عبد الجليل بدعوتكم لحضور حفل زفاف ابنها</p>
 
-<div class="count">
-<div class="circle"><div id="d" class="num">0</div><small>يوم</small></div>
-<div class="circle"><div id="h" class="num">0</div><small>ساعة</small></div>
-<div class="circle"><div id="m" class="num">0</div><small>دقيقة</small></div>
-<div class="circle"><div id="s" class="num">0</div><small>ثانية</small></div>
-</div>
-</div>
+    <h1 class="names">عبد الصمد عيادي</h1>
+    <p class="subname">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا ﴾</p>
+
+    <p class="invite-text">
+      يسعدنا ويشرفنا حضوركم لمشاركتنا أجمل اللحظات وأسعد الأوقات،
+      فحضوركم يزيدنا فرحًا وسرورًا، ووجودكم بيننا هو أغلى هدية
+      نتمناها في هذا اليوم المبارك.
+    </p>
+
+    <div class="divider" aria-hidden="true"><span class="dash"></span><span class="dot"></span><span class="dash"></span></div>
+
+    <div class="details">
+      <div class="detail-row">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+        <span><strong>الخميس، 3 سبتمبر 2026</strong></span>
+      </div>
+      <div class="detail-row">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <span><strong>قاعة الحفلات طورشي</strong></span>
+      </div>
+      <div class="detail-sub">فرجيوة، ولاية ميلة</div>
+
+      <div class="opening-row">
+        <span class="opening-ar">افتتاح الصالة: 4 مساءً</span>
+        <span class="opening-sep" aria-hidden="true"></span>
+        <span class="opening-fr" dir="ltr" lang="fr">Ouverture de la salle&nbsp;: 16h00</span>
+      </div>
+    </div>
+
+    <div class="countdown-wrap">
+      <p class="countdown-label">الوقت المتبقي حتى يوم الفرح</p>
+      <div class="countdown" id="countdown" role="timer" aria-live="polite">
+        <div class="cell"><span class="star"></span><span class="num" id="cd-days">00</span><span class="unit">يوم</span></div>
+        <div class="cell"><span class="star"></span><span class="num" id="cd-hours">00</span><span class="unit">ساعة</span></div>
+        <div class="cell"><span class="star"></span><span class="num" id="cd-mins">00</span><span class="unit">دقيقة</span></div>
+        <div class="cell"><span class="star"></span><span class="num" id="cd-secs">00</span><span class="unit">ثانية</span></div>
+      </div>
+      <p class="celebrate" id="celebrate-msg">بارك الله لهما وبارك عليهما، ألف مبروك! 🌸</p>
+    </div>
+
+    <a class="cta" href="https://maps.app.goo.gl/uvVsPnUhFb8RynFVA" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+      عرض الموقع على الخريطة
+    </a>
+
+    <p class="footer-note">بحضوركم تكتمل فرحتنا <span class="heart">♥</span><br>ننتظركم بشوق</p>
+  </div>
+</main>
 
 <script>
-function openInvitation(){document.getElementById('welcome').style.display='none';}
-const target=new Date("2026-09-03T16:00:00").getTime();
-setInterval(()=>{
-let diff=target-new Date().getTime();
-document.getElementById('d').innerText=Math.floor(diff/86400000);
-document.getElementById('h').innerText=Math.floor((diff%86400000)/3600000);
-document.getElementById('m').innerText=Math.floor((diff%3600000)/60000);
-document.getElementById('s').innerText=Math.floor((diff%60000)/1000);
-},1000);
-</script>
+  // ambient stars
+  (function(){
+    const wrap = document.getElementById('stars');
+    const n = 26;
+    for(let i=0;i<n;i++){
+      const s = document.createElement('span');
+      s.style.top = Math.random()*100+'%';
+      s.style.left = Math.random()*100+'%';
+      s.style.animationDelay = (Math.random()*4)+'s';
+      wrap.appendChild(s);
+    }
+  })();
 
+  // countdown to Sept 3 2026, 00:00 (Africa/Algiers ~ UTC+1, no DST)
+  (function(){
+    const target = new Date('2026-09-03T00:00:00+01:00').getTime();
+    const els = {
+      d: document.getElementById('cd-days'),
+      h: document.getElementById('cd-hours'),
+      m: document.getElementById('cd-mins'),
+      s: document.getElementById('cd-secs')
+    };
+    const box = document.getElementById('countdown');
+    const msg = document.getElementById('celebrate-msg');
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function tick(){
+      const now = Date.now();
+      const diff = target - now;
+      if(diff <= 0){
+        box.style.display = 'none';
+        document.querySelector('.countdown-label').style.display='none';
+        msg.style.display = 'block';
+        clearInterval(timer);
+        return;
+      }
+      const days = Math.floor(diff/(1000*60*60*24));
+      const hours = Math.floor((diff/(1000*60*60))%24);
+      const mins = Math.floor((diff/(1000*60))%60);
+      const secs = Math.floor((diff/1000)%60);
+      els.d.textContent = pad(days);
+      els.h.textContent = pad(hours);
+      els.m.textContent = pad(mins);
+      els.s.textContent = pad(secs);
+    }
+    tick();
+    const timer = setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
