@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة زفاف عبد الصمد</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:Tahoma, Arial, sans-serif;
+background:linear-gradient(135deg,#000,#111,#1b1b1b);
+color:#f5d37a;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1{
+font-size:42px;
+margin-top:20px;
+}
+
+.verse{
+font-size:20px;
+line-height:2;
+margin:30px 0;
+color:#fff2c6;
+}
+
+.card{
+border:2px solid #d4af37;
+border-radius:20px;
+padding:25px;
+margin:25px 0;
+background:rgba(255,215,0,0.05);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.box{
+border:1px solid #d4af37;
+padding:15px;
+border-radius:15px;
+min-width:80px;
+}
+
+.number{
+font-size:30px;
+font-weight:bold;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+}
+
+.footer{
+margin-top:40px;
+font-size:18px;
+color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💍 دعوة زفاف</h1>
+
+<div class="verse">
+﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾
+</div>
+
+<div class="card">
+يسرنا ويشرفنا دعوتكم لحضور حفل زفاف
+
+<h2>عبد الصمد</h2>
+
+<p>
+يوم الخميس 03 سبتمبر 2026
+</p>
+
+<p>
+قاعة الحفلات طورشي<br>
+فرجيوة - ولاية ميلة
+</p>
+
+<a class="btn" href="https://maps.app.goo.gl/yVCtMybXV2EeparS7" target="_blank">
+📍 موقع القاعة
+</a>
+</div>
+
+<h2>⏳ العد التنازلي</h2>
+
+<div class="countdown">
+<div class="box">
+<div id="days" class="number">0</div>
+أيام
+</div>
+
+<div class="box">
+<div id="hours" class="number">0</div>
+ساعات
+</div>
+
+<div class="box">
+<div id="minutes" class="number">0</div>
+دقائق
+</div>
+
+<div class="box">
+<div id="seconds" class="number">0</div>
+ثواني
+</div>
+</div>
+
+<div class="footer">
+حضوركم يزيد فرحتنا بهجةً وسروراً<br>
+ونتشرف بمشاركتكم لنا هذه المناسبة السعيدة ❤️
+</div>
+
+</div>
+
+<script>
+
+const weddingDate = new Date("September 3, 2026 19:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
