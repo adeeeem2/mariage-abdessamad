@@ -2,13 +2,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>دعوة زفاف - عيادي عبد الصمد</title>
     <!-- خطوط أنيقة -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet" />
     <style>
-        /* ===== إعدادات عامة ===== */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +26,6 @@
             margin: 0;
         }
 
-        /* ===== حاوية البطاقة ===== */
         .card-container {
             width: 100%;
             max-width: 480px;
@@ -36,7 +34,6 @@
             user-select: none;
         }
 
-        /* ===== البطاقة نفسها ===== */
         .card {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -51,7 +48,6 @@
             transform: rotateY(180deg);
         }
 
-        /* ===== الوجوه ===== */
         .card-face {
             position: absolute;
             width: 100%;
@@ -229,18 +225,26 @@
             gap: 6px;
         }
 
-        .back .content p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #2d2d2d;
-            margin: 2px 0;
+        /* النص التقديمي الخفيف */
+        .back .intro-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #3d3d3d;
+            padding: 6px 4px;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .back .intro-text strong {
+            color: #b8912a;
+            font-weight: 700;
         }
 
         .back .content .highlight-name {
             font-size: 1.6rem;
             font-weight: 900;
             color: #d4af37;
-            margin: 4px 0;
+            margin: 2px 0 4px;
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
             font-family: 'Amiri', serif;
         }
@@ -251,7 +255,7 @@
             border-radius: 18px;
             border-right: 4px solid #d4af37;
             width: 100%;
-            margin: 8px 0;
+            margin: 6px 0 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
         }
 
@@ -282,7 +286,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 12px;
+            margin-top: 8px;
             padding: 10px 28px;
             background: linear-gradient(135deg, #d4af37, #b8912a);
             color: #1a1a1a;
@@ -299,54 +303,6 @@
             transform: scale(1.05);
             background: linear-gradient(135deg, #e8c84a, #d4af37);
             box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5);
-        }
-
-        /* ===== العد التنازلي ===== */
-        .countdown-section {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .countdown-section .cd-title {
-            font-weight: 700;
-            color: #8a7a4a;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-        }
-
-        .countdown .time-box {
-            background: #1a1a1a;
-            color: #d4af37;
-            padding: 8px 4px;
-            border-radius: 14px;
-            min-width: 58px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            flex: 1;
-        }
-
-        .countdown .time-box .num {
-            font-size: 1.8rem;
-            font-weight: 900;
-            display: block;
-            line-height: 1.2;
-            font-family: 'Amiri', serif;
-        }
-
-        .countdown .time-box .label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            color: #b89b5b;
-            letter-spacing: 1px;
         }
 
         /* ===== استجابة ===== */
@@ -375,15 +331,11 @@
             .back .content p {
                 font-size: 0.95rem;
             }
-            .countdown .time-box {
-                min-width: 48px;
-                padding: 6px 2px;
-            }
-            .countdown .time-box .num {
-                font-size: 1.4rem;
-            }
             .back .content .details .row {
                 font-size: 0.85rem;
+            }
+            .back .intro-text {
+                font-size: 0.9rem;
             }
         }
 
@@ -400,15 +352,8 @@
             .front .groom-name {
                 font-size: 1.9rem;
             }
-            .countdown .time-box {
-                min-width: 40px;
-            }
-            .countdown .time-box .num {
-                font-size: 1.2rem;
-            }
         }
 
-        /* ===== شريط التمرير للداخل في حال زيادة المحتوى ===== */
         .back::-webkit-scrollbar {
             width: 4px;
         }
@@ -452,8 +397,12 @@
                 </div>
 
                 <div class="content">
-                    <p style="font-weight: 700;">يتقدم السيد <strong>عيادي عبد الجليل</strong> وعائلته</p>
-                    <p>بدعوتكم لتشريفنا بحضور حفل زفاف ابنهم</p>
+                    <!-- النص التقديمي الخفيف -->
+                    <div class="intro-text">
+                        <strong>بكل سرور وبهجة</strong>، يتشرف السيد <strong>عيادي عبد الجليل</strong> وعائلته بدعوتكم لمشاركتهم فرحة زفاف ابنهم البكر
+                        <strong>عيادي عبد الصمد</strong>، نسأل الله أن يجمع بينهما على خير ويبارك لهما.
+                    </div>
+
                     <div class="highlight-name">عيادي عبد الصمد</div>
 
                     <div class="details">
@@ -463,7 +412,7 @@
                         </div>
                         <div class="row">
                             <span class="label">⏰ الوقت</span>
-                            <span class="value">الساعة 8:00 مساءً</span>
+                            <span class="value">الساعة 4:00 مساءً</span>
                         </div>
                         <div class="row">
                             <span class="label">📍 المكان</span>
@@ -475,60 +424,15 @@
                         🗺️ عرض الموقع على الخريطة
                     </a>
 
-                    <!-- العد التنازلي -->
-                    <div class="countdown-section">
-                        <div class="cd-title">⏳ العد التنازلي</div>
-                        <div class="countdown" id="countdown">
-                            <div class="time-box">
-                                <span class="num" id="days">00</span>
-                                <span class="label">يوم</span>
-                            </div>
-                            <div class="time-box">
-                                <span class="num" id="hours">00</span>
-                                <span class="label">ساعة</span>
-                            </div>
-                            <div class="time-box">
-                                <span class="num" id="minutes">00</span>
-                                <span class="label">دقيقة</span>
-                            </div>
-                            <div class="time-box">
-                                <span class="num" id="seconds">00</span>
-                                <span class="label">ثانية</span>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- تم إزالة العد التنازلي نهائياً -->
                 </div>
             </div>
 
         </div>
     </div>
 
-    <script>
-        (function() {
-            // تاريخ الهدف: 3 سبتمبر 2026 الساعة 20:00
-            const targetDate = new Date('2026-09-03T20:00:00').getTime();
-
-            function updateCountdown() {
-                const now = Date.now();
-                let diff = targetDate - now;
-
-                if (diff < 0) diff = 0;
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
-    </script>
+    <!-- لا يوجد سكربت العد التنازلي -->
 </body>
 </html>
 ```
+            
