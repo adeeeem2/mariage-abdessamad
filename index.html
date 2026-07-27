@@ -1,188 +1,81 @@
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitation au Mariage - Abdessamad Ayadi</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-
+<title>دعوة زفاف - عبد الصمد عيادي</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#fffdf8;
---champagne:#c8a97e;
---text:#5a4a3a;
---line:#e7d7c1;
-}
-*{box-sizing:border-box}
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:"Cormorant Garamond",serif;
-}
-.wrapper{
-max-width:1000px;
-margin:auto;
-padding:40px 24px 80px;
-}
-.hero{
-text-align:center;
-padding:80px 0 40px;
-}
-.kicker{
-letter-spacing:4px;
-font-size:14px;
-color:var(--champagne);
-text-transform:uppercase;
-}
-.name{
-font-family:"Great Vibes",cursive;
-font-size:88px;
-color:var(--champagne);
-margin:20px 0;
-}
-.date{
-font-size:28px;
-letter-spacing:5px;
-}
-.line{
-width:120px;
-height:1px;
-background:var(--champagne);
-margin:24px auto;
-}
-.card{
-background:white;
-border:1px solid var(--line);
-border-radius:24px;
-padding:32px;
-margin:28px 0;
-box-shadow:0 8px 30px rgba(0,0,0,.05);
-}
-.fr{
-text-align:center;
-line-height:1.9;
-font-size:22px;
-}
-.ar{
-font-family:"Amiri",serif;
-direction:rtl;
-text-align:center;
-line-height:2.1;
-font-size:28px;
-}
-.info{
-text-align:center;
-font-size:24px;
-line-height:2;
-}
-.section-title{
-text-align:center;
-font-size:34px;
-color:var(--champagne);
-margin-top:40px;
-}
-.countdown{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-.circle{
-width:120px;
-height:120px;
-border-radius:50%;
-border:2px solid var(--champagne);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:white;
-}
-.num{font-size:34px;font-weight:bold}
-.label{font-size:14px;letter-spacing:1px}
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 28px;
-border-radius:999px;
-background:var(--champagne);
-color:white;
-text-decoration:none;
-}
-.footer{
-text-align:center;
-margin-top:50px;
-font-size:24px;
-}
+body{margin:0;background:#fffdf8;color:#5a4a3a;font-family:Amiri,serif}
+.overlay{position:fixed;inset:0;background:#fffdf8;display:flex;align-items:center;justify-content:center;z-index:99}
+.card{border:1px solid #d9c1a0;padding:40px;border-radius:20px;text-align:center;background:white;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.btn{background:#c8a97e;color:white;border:none;padding:12px 25px;border-radius:30px;font-size:18px}
+.hidden{display:none}
+.container{max-width:950px;margin:auto;padding:30px}
+.title{text-align:center;color:#c8a97e;letter-spacing:3px}
+.name{font-family:'Great Vibes',cursive;font-size:80px;text-align:center;color:#c8a97e}
+.date{text-align:center;font-size:28px}
+.section{background:white;border:1px solid #eadbc8;border-radius:20px;padding:25px;margin:20px 0}
+.fr{direction:ltr;text-align:center;font-family:'Cormorant Garamond',serif;font-size:24px}
+.ar{text-align:center;font-size:30px;line-height:2}
+.count{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.circle{width:110px;height:110px;border:2px solid #c8a97e;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.num{font-size:30px;font-weight:bold}
+a.map{display:inline-block;background:#c8a97e;color:white;padding:12px 20px;border-radius:30px;text-decoration:none}
 </style>
 </head>
 <body>
 
-<div class="wrapper">
+<div class="overlay" id="welcome">
+<div class="card">
+<h2>دعوة زفاف</h2>
+<h3>عبد الصمد عيادي</h3>
+<p>يسرنا دعوتكم لمشاركتنا هذه المناسبة السعيدة</p>
+<button class="btn" onclick="openInvitation()">فتح الدعوة ✨</button>
+</div>
+</div>
 
-<div class="hero">
-<div class="kicker">INVITATION AU MARIAGE</div>
+<div class="container">
+<div class="title">INVITATION AU MARIAGE</div>
 <div class="name">Abdessamad Ayadi</div>
 <div class="date">03 • 09 • 2026</div>
-<div class="line"></div>
-</div>
 
-<div class="card fr">
-Avec tout notre respect et notre affection, la famille Ayadi Abdeljalil a l'honneur de vous inviter à partager la joie du mariage de son fils Abdessamad. Votre présence illuminera cette journée exceptionnelle et contribuera à rendre ce moment inoubliable.
-</div>
-
-<div class="card ar">
+<div class="section ar">
 بكل معاني المحبة والتقدير، تتشرف عائلة عيادي عبد الجليل بدعوتكم لمشاركتها فرحة زفاف ابنها عبد الصمد، فحضوركم يزيد هذه المناسبة بهجةً وسرورًا، ويمنحها أجمل معاني المودة والوفاء.
 </div>
 
-<div class="card info">
-📅 Jeudi 03 Septembre 2026<br>
+<div class="section fr">
+Avec tout notre respect et notre affection, la famille Ayadi Abdeljalil a l'honneur de vous inviter à partager la joie du mariage de son fils Abdessamad.
+</div>
+
+<div class="section ar">
 📅 الخميس 03 سبتمبر 2026<br><br>
-
-🕓 Ouverture de la salle : 16h00<br>
 🕓 فتح القاعة : 16:00<br><br>
-
-📍 Salle des fêtes Tourchi – Ferdjioua, Mila<br>
 📍 قاعة الحفلات طورشي – فرجيوة، ميلة<br><br>
-
-<a class="btn" href="https://maps.app.goo.gl/yVCtMybXV2EeparS7" target="_blank">Voir l'emplacement / موقع القاعة</a>
+<a class="map" href="https://maps.app.goo.gl/yVCtMybXV2EeparS7" target="_blank">موقع القاعة</a>
 </div>
 
-<div class="section-title">
-Le grand jour approche...
-</div>
+<div class="ar" style="color:#c8a97e">يقترب موعد هذا اليوم المميز...</div>
+<br>
 
-<div class="section-title" style="font-size:26px">
-يقترب موعد هذا اليوم المميز...
+<div class="count">
+<div class="circle"><div id="d" class="num">0</div><small>يوم</small></div>
+<div class="circle"><div id="h" class="num">0</div><small>ساعة</small></div>
+<div class="circle"><div id="m" class="num">0</div><small>دقيقة</small></div>
+<div class="circle"><div id="s" class="num">0</div><small>ثانية</small></div>
 </div>
-
-<div class="countdown">
-<div class="circle"><div class="num" id="days">0</div><div class="label">JOURS</div></div>
-<div class="circle"><div class="num" id="hours">0</div><div class="label">HEURES</div></div>
-<div class="circle"><div class="num" id="minutes">0</div><div class="label">MINUTES</div></div>
-<div class="circle"><div class="num" id="seconds">0</div><div class="label">SECONDES</div></div>
-</div>
-
-<div class="footer">
-Nous serions honorés de votre présence.<br><br>
-حضوركم يزيد فرحتنا بهجة ويمنح هذه المناسبة أجمل معانيها.
-</div>
-
 </div>
 
 <script>
-const target = new Date("2026-09-03T16:00:00").getTime();
+function openInvitation(){document.getElementById('welcome').style.display='none';}
+const target=new Date("2026-09-03T16:00:00").getTime();
 setInterval(()=>{
-const now = new Date().getTime();
-const d = target-now;
-document.getElementById("days").innerText=Math.floor(d/(1000*60*60*24));
-document.getElementById("hours").innerText=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-document.getElementById("minutes").innerText=Math.floor((d%(1000*60*60))/(1000*60));
-document.getElementById("seconds").innerText=Math.floor((d%(1000*60))/1000);
+let diff=target-new Date().getTime();
+document.getElementById('d').innerText=Math.floor(diff/86400000);
+document.getElementById('h').innerText=Math.floor((diff%86400000)/3600000);
+document.getElementById('m').innerText=Math.floor((diff%3600000)/60000);
+document.getElementById('s').innerText=Math.floor((diff%60000)/1000);
 },1000);
 </script>
 
